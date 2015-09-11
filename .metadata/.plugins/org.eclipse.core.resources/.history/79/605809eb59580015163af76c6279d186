@@ -1,0 +1,25 @@
+package ch.ecal.processing.hello;
+
+import processing.core.PApplet;
+
+public class UseHelloProcessing extends PApplet {
+
+	private static final long serialVersionUID = 1L;
+	private int x;
+	private int y;
+	
+	
+	public void setup() {
+		size(200, 200);
+		background(0);
+		y = height/2;
+		
+	}
+	
+	public void draw() {
+		x++;
+		ellipse(x, y, 30, 30);
+	}
+
+}
+
