@@ -1,0 +1,10 @@
+package ch.ecal.processing.threeD;
+
+import java.awt.Color;
+import java.util.Random;
+
+public class PatternBox {
+	
+	color c = color(Random(100),30,30); 
+
+}
