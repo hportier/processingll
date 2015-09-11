@@ -1,0 +1,50 @@
+package ch.ecal.processing.three;
+
+import java.util.ArrayList;
+
+import processing.core.PApplet;
+import processing.core.PVector;
+
+public class Use3D extends PApplet {
+	private static final long serialVersionUID = 1L;
+	PatternBox pb;
+	ArrayList<PatternBox> pboxes;
+	
+	public void setup() {
+		pboxes = new ArrayList<PatternBox>();
+		for (int i = 0; i < 10; i++) {
+			PatternBox p = new PatternBox(this);
+			pboxes.add(p);
+			int c = 0;
+			c+=20;
+			
+			p.color = new PVector(255, 0, c);
+			
+		}
+		pb = new PatternBox(this);
+		size(300, 300, P3D);
+		background(0, 255, 0);
+		
+	}
+	
+	public void draw() {
+		lights();
+		pushMatrix();
+		rotateY(PI/6);
+		translate(width/2, height/2);
+		scale(100, 100, 100);
+
+		fill(255, 0, 255);
+		noStroke();
+		for (int i = 0; i < 10; i++) {
+			pushMatrix();
+			translate(i, 0, 0);
+
+			
+			popMatrix();
+		}
+		pb.draw();
+	
+		popMatrix();
+	}
+}
